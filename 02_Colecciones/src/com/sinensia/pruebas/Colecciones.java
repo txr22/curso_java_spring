@@ -19,6 +19,22 @@ import java.util.TreeMap;
  * @author Admin
  */
 public class Colecciones {
+    public static void comparaciones(){
+        
+        Cliente luis = new Cliente(2, "Luis", null); 
+        Cliente bea = new Cliente(3, "Bea", null); 
+        
+        if (bea.compareTo(luis)<0){
+            System.out.println("BEA es menor que Luis");
+        } else if (bea.compareTo(luis) == 0){
+            
+            System.out.println("Son iguales");
+
+        } else if (bea.compareTo(luis) > 0){
+            
+         System.out.println("BEA es mayor que Luis");
+        }
+    }
     
     public static void ejemploHashMap() {
         HashMap<String, Cliente> diccClientes;
@@ -26,6 +42,8 @@ public class Colecciones {
         Cliente ana = new Cliente(1, "Ana", null); 
         Cliente luis = new Cliente(2, "Luis", null); 
         Cliente bea = new Cliente(3, "Bea", null); 
+        
+        
         
         diccClientes.put("c3", bea);
         diccClientes.put("a1", ana);

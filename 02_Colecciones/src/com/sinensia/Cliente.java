@@ -3,7 +3,8 @@ package com.sinensia;
 import com.sinensia.genericos.GenericoDao;
 
 
-public class Cliente extends Entidad{
+public class Cliente extends Entidad implements Comparable<Cliente>{
+
        
     protected String nombre;
     private String email;
@@ -59,5 +60,18 @@ public class Cliente extends Entidad{
     public String toString() {
        // return super.toString();
        return "Cliente ["+id+ ", "+nombre+ ", "+email+"]";
+    }
+
+    @Override
+    public int compareTo(Cliente otroCli) {
+
+        //COMPARAMOS POR NOMBRE
+        if(nombre.compareTo(otroCli.nombre) == 0){
+            //SI SON IGUALES, COMPARAMOS POR EMAIL
+            return email.compareTo(otroCli.email);
+        } else {
+            //DEVOLVEMOS LA COMPARACION DE NOMBRES
+            return nombre.compareTo(otroCli.nombre);
+        }
     }
 }

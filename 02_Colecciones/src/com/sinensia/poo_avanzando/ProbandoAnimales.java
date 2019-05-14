@@ -6,7 +6,6 @@
 package com.sinensia.poo_avanzando;
 
 import com.sinensia.Cliente;
-import com.sun.security.ntlm.Client;
 
 /**
  *

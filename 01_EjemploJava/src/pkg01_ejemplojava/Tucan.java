@@ -1,42 +1,30 @@
-
 package pkg01_ejemplojava;
 
-
-public class Tucan {
+/**
+ * Un pajaro exótico
+ * @author German
+ */
+public class Tucan extends Object {
     
-     String [] colores;
-     float longuitud;
-     int edad;
+    String[] colores;
+    float longitud;
+    int edad;
     
-    
- public Tucan(){
-     
-     this.edad = 0;
-     longuitud =  5f;
-     colores = new String[] {
-         "rojo", "blanco"
-     };
+    public Tucan() {
+        this.edad = 0;
+        longitud = 5f;
+        colores = new String[] {
+            "blanco", "marron"
+        };
         
     }
     
-//    Tucan(String colores[], float longuitud, int edad){
-//        
-//        this.colores = colores;
-//        this.longuitud = longuitud;
-//        this.edad = edad;
-//        
-//    }
-    
-     public void piar(){
-         System.out.println("pio pio" + edad +" años");
-     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+/** 
+ * Un pajaro dice pío y su edad
+ * @author German
+ */
+    public void piar() {
+        System.out.println("Pio pio "
+                + edad + " años");
+    }
 }

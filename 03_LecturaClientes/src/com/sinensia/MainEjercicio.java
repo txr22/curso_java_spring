@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class MainEjercicio {
 
     public static void main(String[] args) {
-        File fichRutaRelativa = new File("Ejercicio_ficheros.txt");
+        File fichRutaRelativa = new File("C:\\Users\\Admin\\Desktop\\CURSO_JAVA\\repositorio_github_local.git\\Ejercicio_ficheros.txt");
         Scanner escaner = null;
         HashMap<Long, Cliente> mapaDat = new HashMap<>();
         try {

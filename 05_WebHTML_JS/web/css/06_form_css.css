@@ -1,0 +1,51 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    background-size: 20px 20px;
+    
+}
+
+.ins{
+    width: 250px;
+    display: inline-block;
+    font-size: 1.2em;
+    display: block;
+    padding-top: 10px;
+    font-family: fantasy;
+    color: tomato;
+}
+
+.formu {
+    background-color: #AAFFAA; 
+    padding: 10px;
+    display: inline-block;
+    border: solid 1px;
+    border-radius: 8px;
+    box-shadow: 10px 5px 5px black;
+    
+    }
+    
+    .margen-lateral{
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 2rem;
+        
+    }
+
+    .btn{
+        text-align: center;
+        padding-top: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+        
+    }
+    
+    .container{
+        text-align: center;
+    }
+    .titulo{
+        font-family: cursive;
+        color:blueviolet;
+        /*box-shadow: 10px 5px 5px blueviolet;*/
+    }

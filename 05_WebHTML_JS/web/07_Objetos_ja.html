@@ -46,23 +46,51 @@
                 divDatos.innerHTML += objCliente.toString() + "</br>";
                 divDatos.innerHTML += objCliente.aTexto("VALOR 1", "VALOR 2");
                 
+//****************************************************************************************************
+                //CREAR OBJETOS EN JAVASCRIPT COMO SI FUERA UN CONSTRUCTOR
+                
                 function Cliente(nom, edad){
                     this.nombre = nom; this.edad = edad;
                     this.toString = function(){
                         return "Cliente: " +this.nombre +" edad: "+ this.edad; };
                 };
                 
+                
+                
                 var miCliente = new Cliente("Ana", 30);
                 divDatos.innerHTML += "<br>" +miCliente.toString()+"<br>";
+                
+                
                 //************************************************************************
-                var otrocliente = {
+                //************************************************************************
+                
+                        //CREAR OBJETO DE FORMA JSON, CON CLAVE VALOR
+                        //FORMATO CORRECTO JSON
+                        var otrocliente = {
+
+                            "nombre"  : "Luis",
+                            "edad" : 37,
+                            "activo" : true,        
+                            "enTexto" : function(){return "Cli "+this.nombre}
+                        };
+                        
+                //************************************************************************
+                //************************************************************************
+                //************************************************************************
+                //OTROS FORMATOS PERMITIDOS EN JS PERO NO JSON
+
+               
+               var otrocliente2 = {
                     
-                    "nombre"  : "Luis",
-                    "edad" : 37,
+                    'nombre'  : "Luis",
+                     edad : 37,
                     "activo" : true,        
                     "enTexto" : function(){return "Cli "+this.nombre}
                 };
-                
+               
+
+                //************************************************************************
+
                 divDatos.innerHTML += otrocliente.enTexto() + " > "
                 + otrocliente.edad;
                 
@@ -77,6 +105,20 @@
             var btn = document.getElementById("btn");
                    // btn.onclick= mostrarDatos;
             btn.addEventListener("click", mostrarDatos);
+            
+            //AZUCAR SINTACTICO PARA LO MISMO QUE ANTES DE LOS OBJETOS
+            class ClaseCliente {
+                
+                constructor(nombre, edad, act){
+                    this.nombre = nombre;
+                    this.edad = edad;
+                    this.act = act;
+                }
+                
+                toString (){
+                    return "Cli "+ this.nombre;
+                }
+            }
             
         </script>
     </body>

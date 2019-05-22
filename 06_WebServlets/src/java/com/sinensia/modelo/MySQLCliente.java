@@ -1,4 +1,3 @@
-
 package com.sinensia.modelo;
 
 import static com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare.OneOfMessage.Type.INSERT;

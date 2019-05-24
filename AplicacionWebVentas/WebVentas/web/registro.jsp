@@ -7,7 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <%@include file="cabecera.jsp" %>
         <h1>Registro</h1>
+
         <div>
             <form action="clientes.do" name="form1" method="post" >
                 <label for="nombre">Nombre:</label><input id="nombre" name="nombre" type="text" required="required" size="50" maxlength="50"/><br>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
         <title>Index</title>
@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Web Ventas</h1>
-        <a href="registro.jsp">Nuevo cliente</a>
+        <%@include file="cabecera.jsp" %>
     </body>
 </html>

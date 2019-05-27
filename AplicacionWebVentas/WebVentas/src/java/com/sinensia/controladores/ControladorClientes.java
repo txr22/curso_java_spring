@@ -31,9 +31,11 @@ public class ControladorClientes extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        
        String nombre = request.getParameter("nombre");
        nombre = nombre != null ? nombre : "";
        //cookies guardar el nombre en la cookie
+       //CREAMOS LA COOKIE PARA GUARDAR EL NOMBRE
         Cookie galleta = new Cookie("nombre_busqueda", nombre);
         galleta.setMaxAge(10000);
         response.addCookie(galleta);
@@ -86,7 +88,9 @@ public class ControladorClientes extends HttpServlet {
         
         String nombre = request.getParameter("nombre");
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        //String password = request.getParameter("password");
+        //COGEMOS ESTA PARA ENCRIPTAR
+        String password = request.getParameter("password_encrip");
         String edad = request.getParameter("edad");
         String activo = request.getParameter("activo");
         

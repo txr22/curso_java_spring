@@ -7,6 +7,17 @@
         <a href="listado_sql.jsp">Listado con sql</a><br>
         <a href="clientes.do">Listado con jstl y Beans</a><br>
     </div> 
+    
+    <span>
+      <%--  <%=request.getCookies().length <= 1 ? "" : request.getCookies()[1].getValue()%> --%>
+    </span>
+  <%-- cookies con EL (expresion Language--%>
+    <span> ${cookie.nombre_busqueda.value}</span>
+    <span id="cookie_nom"></span>  
+        
+   
+        
+    
     <div id="buscar">
         <form action="clientes.do" method="get">
             <input type="text" id="nombre" name="nombre"/><br>
@@ -18,4 +29,8 @@
         
     </div>    
 </nav>
+    
+    
+    <script src="js/cookies.js"></script>
+    
         

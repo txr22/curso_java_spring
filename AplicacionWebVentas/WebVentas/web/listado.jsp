@@ -16,7 +16,7 @@ List<Cliente> clientes = srvCli.obtenerTodos();
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listado clientes</title>
+        <title>Listado clientesSS</title>
         <style type='text/css'>
 
                 tr:nth-child(even) { background: moccasin }

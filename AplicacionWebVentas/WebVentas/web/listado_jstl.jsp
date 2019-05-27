@@ -22,7 +22,7 @@
     </head>
     <body>
         <%@include file="cabecera.jsp" %>
-        <h1>Listado en jstl </h1>
+        <h1>Listado en JSTL </h1>
         
         
          <table border="2">

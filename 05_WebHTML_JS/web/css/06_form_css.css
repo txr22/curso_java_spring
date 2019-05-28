@@ -1,51 +1,28 @@
-
-*{
+/* 
+    Created on : 17-may-2019, 13:26:06
+    Author     : Admin
+*/
+* {
     margin: 0px;
-    padding: 0px;
-    background-size: 20px 20px;
-    
+    padding: 0px;    
 }
-
-.ins{
-    width: 250px;
-    display: inline-block;
-    font-size: 1.2em;
-    display: block;
-    padding-top: 10px;
-    font-family: fantasy;
-    color: tomato;
-}
-
-.formu {
-    background-color: #AAFFAA; 
+/* Selector de etiqueta */
+form {
+    background-color: #AAFFAA;
     padding: 10px;
+    display: block;
+}
+.margen-lateral {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+form  div /* , form input*/ {
+    display: block;
+}
+label {
+    width: 200px;
     display: inline-block;
-    border: solid 1px;
-    border-radius: 8px;
-    box-shadow: 10px 5px 5px black;
-    
-    }
-    
-    .margen-lateral{
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 2rem;
-        
-    }
-
-    .btn{
-        text-align: center;
-        padding-top: 30px;
-        margin-left: 30px;
-        margin-right: 30px;
-        
-    }
-    
-    .container{
-        text-align: center;
-    }
-    .titulo{
-        font-family: cursive;
-        color:blueviolet;
-        /*box-shadow: 10px 5px 5px blueviolet;*/
-    }
+}
+#email {
+    font-size: 1.2em;
+}

@@ -1,41 +1,43 @@
-<!DOCTYPE html lang="es">
-	<head>
-		<meta charset="UTF-8"/>
-		<title>Mi primera pagina</title>
-                <style type="text/css">
-                    form{
-                        background-color: #AAFFAA;
-                        padding: 20px;
-                    }
-                    
-                </style>
-	</head>
-	<body>
-	<h1>Formularios:</h1>
-        
-        <form action="mailto:correo@empresa.com" method="POST" enctype="text/plain">
+﻿<!DOCTYPE html>
+<html lang="es">
+    <head>			
+        <meta charset="UTF-8"/>
+        <title>Formularios</title>
+        <style type="text/css">
+            form {
+                background-color: #AAFFAA;
+                padding: 40px;
+            }
+        </style>
+    </head>
+    <body>			
+        <h1>Formularios</h1>
+        <form action="mailto:correo@empresa.com"
+              method="post" enctype="text/plain">
             <label for="nombre">Nombre:</label>
-            <input id="nombre" name="nombre" type="text" size="30" maxlength="40"/><br>
-            <label for="email">Email:</label><input id="email" name="email" type="email" size="30" maxlength="40" size=""/> <br>
-            <label for="edad">Edad:</label><input id="edad" name="edad" type="number" size="" min="18" max="80" step="5"/> <br>
-            
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Borrar">
-
+            <input type="text" name="nombre" id="nombre"
+                   size="30" maxlength="40" 
+                   placeholder="Introduzca su nombre"/><br/>                 
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email"
+                   size="30" maxlength="255"/> <br/>                  
+            <label for="edad">Edad: </label>
+            <input type="number" name="edad" id="edad"
+                   min="18" max="80" step="5"/> <br/>
+            <br/>
+            <input type="submit" value="Enviar formulario"/>
+            <input type="reset" value="Borrar formulario"/>
         </form>
-        
         <script>
-            var texto = "un texto cualquiera";
-            var num = 34;
+            var texto = "Un texto cualquiero";
+            var numero = 10.3434;
+            // numero = false;
             var campoNombre = document.getElementById("nombre");
-            campoNombre.value="";
-            var campoEmail = document.getElementById("email").value="";
-            var campoEmail = document.getElementById("email").setAttribute("placeholder", "Introduce su email:");
-            var campoEdad = document.getElementById("edad").value="30";
-            
-            
+            campoNombre.value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("email")
+                    .setAttribute("placeholder", "Introduzca su email");
+            document.getElementById("edad").value = "30";
         </script>
-	
-	</body>
-
+    </body>
 </html>

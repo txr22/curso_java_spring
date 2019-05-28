@@ -3,38 +3,39 @@
     <head>			
         <meta charset="UTF-8"/>
         <title>Formularios</title>
-        <link rel="stylesheet" href="css/06_form_css.css" type="text/css">
-    <body>	
-        <div class="margen-lateral container titulo"><h1>Formularios</h1></div>
-        <div class="margen-lateral container">
-            
-            <form  class="formu" action="mailto:correo@empresa.com"
-                      method="post" enctype="text/plain">
-                    <div class="ins">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre"
-                               size="30" maxlength="40" 
-                               placeholder="Introduzca su nombre"/> 
-                    </div>
+        <link rel="stylesheet" type="text/css" href="css/06_form_css.css"/>
+    </head>
+    <body>
+        <div class="margen-lateral">
+            <h1>Formularios</h1>
+        </div>
+        <div class="margen-lateral">
+            <form action="mailto:correo@empresa.com"
+                   method="post" enctype="text/plain">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre"
+                           size="30" maxlength="40" 
+                           placeholder="Introduzca su nombre"/>  
+                </div>
+                <div>
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email"
+                           size="30" maxlength="255"/>  
+                </div>
+                <div>
+                    <label for="edad">Edad: </label>
+                    <input type="number" name="edad" id="edad"
+                           min="18" max="80" step="5"/>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar formulario"/>
+                    <input type="reset" value="Borrar formulario"/>
+                </div>                           
 
-                    <div class="ins">
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email"
-                               size="30" maxlength="255"/>
-                    </div>
-                    
-                     <div class="ins">
-                        <label for="edad">Edad:</label>
-                        <input type="number" name="edad" id="edad"
-                               min="18" max="80" step="5"/> 
-                    </div>
-                    
-                    <div class="btn">
-                        <input type="submit" value="Enviar formulario"/>
-                        <input type="reset" value="Borrar formulario"/>
-                    </div>
-                </form>
-            </div>
+            </form>
+        </div>
+
         <script>
             var texto = "Un texto cualquiero";
             var numero = 10.3434;
@@ -48,7 +49,3 @@
         </script>
     </body>
 </html>
-
-
-           
-            

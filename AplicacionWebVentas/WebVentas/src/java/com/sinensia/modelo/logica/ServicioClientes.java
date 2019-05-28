@@ -33,13 +33,14 @@ public class ServicioClientes {
     }
 
     public Cliente obtenerUno(String email) {
+        return dao.obtenerUno(email);
         //TODO: Implementar en el DAO
-        for (Cliente c : dao.obtenerTodos()) {
+        /*for (Cliente c : dao.obtenerTodos()) {
             if (c.getEmail().equals(email)) {
                 return c;
             }
         }
-        return null;
+        return null;*/
     }
 
     public void eliminar(int id) {
@@ -87,9 +88,7 @@ public class ServicioClientes {
         //TODO: Faltan ciertas validaciones
         return true;
     }
-    public List<Cliente> obtenerTodos(){
+    public List<Cliente> obtenerTodos() {
         return dao.obtenerTodos();
     }
-    
-    
 }

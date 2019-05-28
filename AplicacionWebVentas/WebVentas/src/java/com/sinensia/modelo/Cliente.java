@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 package com.sinensia.modelo;
 
@@ -17,8 +22,6 @@ public class Cliente extends Entidad implements Serializable {
     private short activo;
     
     private String password;
-    
-
     
     public Cliente() {
     }
@@ -74,9 +77,7 @@ public class Cliente extends Entidad implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
-
+    
     @Override
     public int hashCode() {
         int hash = 0;

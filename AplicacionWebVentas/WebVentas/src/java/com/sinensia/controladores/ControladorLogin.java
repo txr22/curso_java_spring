@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.sinensia.controladores;
 
 import com.sinensia.modelo.Cliente;
@@ -10,21 +14,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author Admin
+ */
 public class ControladorLogin extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
+   
+     /**
      * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
@@ -32,8 +29,8 @@ public class ControladorLogin extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-  /*  protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    /*@Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }*/
@@ -46,28 +43,25 @@ public class ControladorLogin extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-   
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        //RECOGEMOS LA PASSWORD
-        String email =  request.getParameter("email");
-        String password =  request.getParameter("password_encrip");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password_encrip");
         
         ServicioClientes servCli = new ServicioClientes();
         Cliente cli = servCli.obtenerUno(email);
         
-        if(cli != null && cli.getPassword().equals(password)) {
+        if (cli != null && cli.getPassword().equals(password)) {
             request.getSession().setAttribute("login", "ok");
-            request.getRequestDispatcher("listado.jsp").forward(request, response);
+            request.getRequestDispatcher("listado.jsp")
+                    .forward(request, response);
         } else {
             request.getSession().setAttribute("login", "ko");
-            request.getRequestDispatcher("error_registro.jsp").forward(request, response);
+            request.getRequestDispatcher("error_registro.jsp")
+                    .forward(request, response);
         }
-        
-        
-        
-        
     }
 
     /**

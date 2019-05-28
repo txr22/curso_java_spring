@@ -22,15 +22,12 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /02_Colecciones/dist/
-/JavaApplication6/nbproject/private/
+build
+build
 /03_LecturaClientes/nbproject/private/
-/03_LecturaClientes/build/
 /03_LecturaClientes/dist/
+/05_WebHTML_JS/nbproject/private/
 /06_WebServlets/nbproject/private/
-/06_WebServlets/build/
-/06_WebServlets/dist/
 /AplicacionWebVentas/ModeloVentas/target/
 /AplicacionWebVentas/ModeloVentas/nbproject/
 /AplicacionWebVentas/WebVentas/nbproject/private/
-/AplicacionWebVentas/WebVentas/build/
-/AplicacionWebVentas/WebVentas/dist/

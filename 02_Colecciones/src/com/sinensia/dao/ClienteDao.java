@@ -1,103 +1,70 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.sinensia.dao;
 
 import com.sinensia.Cliente;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *
+ * @author Admin - German
+ */
+public class ClienteDAO implements InterfazDAO<Cliente> {
 
-public class ClienteDao implements InterfazDao<Cliente>{
-    
-//CREAMOS EL HASHMAP, DE TIPO CLIENTE Y CLAVE STRING
-        HashMap<Long, Cliente> mapa;
-        
-    public ClienteDao (){
-        mapa = new HashMap<>();       
-    }
-    
-        @Override
-    public void poner(Cliente cli){
-        if(cli == null){
-            System.err.println("no se pueden añadir nulos");
-            return;
-        }
-        mapa.put(cli.getId(), cli);
-    }
-    
-    //METODO PARA LEER EL CLIENTE
-        @Override
-    public Cliente leerUno(long id){
-        
-      if(mapa.containsKey(id))  {
-          
-          return mapa.get(id);
-        }
-      System.err.println("Clave/Id no encontrada" + id);
-              return null;
-    }
-    
-    //**********************************************************************************
-    //**********************************************************************************
-    
-    //METODO PARA LEERTODOS
-  
-    @Override
-    public List<Cliente> leerTodos() {
+    HashMap<Long, Cliente> mapa;
 
-        ArrayList<Cliente> listaNueva = new ArrayList<>();
-        
-          for (Map.Entry<Long, Cliente> cli : mapa.entrySet()) {
-          
-              listaNueva.addAll(mapa.values());
-          }
-        return listaNueva;
+    public ClienteDAO() {
+        mapa = new HashMap<>();
     }
-    
-    //**********************************************************************************
-    //**********************************************************************************
 
     @Override
-    public void eliminar(Cliente valor) {
-
-           mapa.remove(valor.getId());
+    public void poner(Cliente cli) {
+        if (cli == null) {
+            System.err.println("No se pueden añadir nulos");
+        } else {
+            mapa.put(cli.getId(), cli);
+        }
     }
-    
-    /* ESTE METODO ES EL MISMO, CAMBIANDO EL NOMBRE DE LAS VARIABLES
+
+    @Override
+    public Cliente leerUno(long id) {
+        if (mapa.containsKey(id)) {
+            return mapa.get(id);
+        }
+        System.err.println("Clave/ID no encontrado " + id);
+        return null;
+    }
+
+    @Override
     public void eliminar(Cliente cliente) {
-
-           mapa.remove(cliente.getId());
-    }*/
+        mapa.remove(cliente.getId());
+    }
 
     @Override
-    public void eliminar(long id) {
-        //AQUI ELIMINA EL CLIENTE TAMBIEN, PERO LE PASAMOS UN ID
+    public void eliminar(long id ) {
         mapa.remove(id);
     }
 
-
     @Override
-    public void modificar(Cliente valor) {
-
- /*       Cliente cli = mapa.get(valor.getId());
-        cli.setActivo(valor.isActivo());
-        cli.setEmail(valor.getEmail());
-        cli.setNombre(valor.getNombre());
-        
-        OPCION FACIL
-        */
-        
-          for (Map.Entry<Long, Cliente> cli : mapa.entrySet()) {
-          
-              if (cli.getKey() == valor.getId()){
-                  cli.setValue(valor);
-              }
- 
-          }
-         
-
+    public List<Cliente> leerTodos() {
+        ArrayList<Cliente> lista;
+        lista = new ArrayList<>();
+        for (Map.Entry<Long, Cliente> ent : mapa.entrySet()) {
+            lista.add(ent.getValue());
+        }
+        return lista;   // Cast implicito
     }
-
+    @Override
+    public void modificar(Cliente nuevoValor) {
+        Cliente cli = mapa.get(nuevoValor.getId()) ;
+        cli.setActivo(nuevoValor.isActivo());
+        cli.setEmail(nuevoValor.getEmail());
+        cli.setNombre(nuevoValor.getNombre());
+    }
 }

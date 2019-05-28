@@ -1,11 +1,9 @@
 package com.sinensia;
 
-import com.sinensia.genericos.GenericoDao;
-
+import com.sinensia.dao.GenericoDAO;
 
 public class Cliente extends Entidad implements Comparable<Cliente>{
-
-       
+     
     protected String nombre;
     private String email;
     private boolean activo;
@@ -14,8 +12,8 @@ public class Cliente extends Entidad implements Comparable<Cliente>{
         
     }*/
     public Cliente(long id, String nombre, String email) /* throws Exception*/ {
-        
         super(id);
+        //this.id = id;
         if (nombre == null || nombre == "") {
             // throw new Exception("Nombre de cliente inválido");
             System.err.println("Nombre de cliente inválido");
@@ -24,7 +22,7 @@ public class Cliente extends Entidad implements Comparable<Cliente>{
         this.email = email;
         this.activo = true;
     }
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -55,23 +53,29 @@ public class Cliente extends Entidad implements Comparable<Cliente>{
         System.out.println("  Id: " + this.id);
         System.out.println("  Email: " + this.getEmail());
     }
-    
+
     @Override
     public String toString() {
-       // return super.toString();
-       return "Cliente ["+id+ ", "+nombre+ ", "+email+"]";
-    }
+        // return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Cliente [" + id + ", " + nombre + ", " + email + "]";
+    }    
 
     @Override
     public int compareTo(Cliente otroCli) {
-
-        //COMPARAMOS POR NOMBRE
-        if(nombre.compareTo(otroCli.nombre) == 0){
-            //SI SON IGUALES, COMPARAMOS POR EMAIL
+        // Comparamos por nombre, por el compareTo de String
+        if (nombre.compareTo(otroCli.nombre) == 0) {    
+            // Si son iguales, comparamos por email
             return email.compareTo(otroCli.email);
-        } else {
-            //DEVOLVEMOS LA COMPARACION DE NOMBRES
+        } else { // devolvemos la comparacion del nombre
             return nombre.compareTo(otroCli.nombre);
         }
     }
 }
+
+
+
+
+
+
+
+

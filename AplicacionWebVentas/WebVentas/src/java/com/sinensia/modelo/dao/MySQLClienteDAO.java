@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MySQLClienteDAO implements InterfazDAO<Cliente> {
-
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     public MySQLClienteDAO() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -29,7 +29,7 @@ public class MySQLClienteDAO implements InterfazDAO<Cliente> {
             Logger.getLogger(MySQLClienteDAO.class.getName())
                     .log(Level.SEVERE, "Otro error", ex);
         }
-    }
+    }// </editor-fold>
 
     public boolean crear(String nombre, String email,
             String passwd, int edad, boolean activo) {
@@ -80,42 +80,37 @@ public class MySQLClienteDAO implements InterfazDAO<Cliente> {
     public Cliente obtenerUno(String email) {
         try (Connection conex = DriverManager.getConnection(
                 Constantes.CONEXION, Constantes.USUARIO, Constantes.PASSWORD)) {
-            String sqlQuery = "SELECT id, nombre, edad, password, activo  FROM cliente WHERE email ?";
-            
+            String sqlQuery = "SELECT id, nombre, edad, password, activo "
+                    + " FROM cliente WHERE email = ?";
             PreparedStatement stmt = conex.prepareStatement(sqlQuery);
-            stmt.setString(1, email);
-            
-            //COGEMOS UN RESULSET DE LA CONSULTA
-            ResultSet res =  stmt.executeQuery();
+            stmt.setString(1, email); // Primer ? interrogante
+            ResultSet res = stmt.executeQuery();
             Cliente cli = null;
-            if(res.next()){
-                 int id = res.getInt(1);
+            if (res.next()) {
+                int id = res.getInt(1);
                 String nombre = res.getString(2);
                 short edad = res.getShort(3);
                 String password = res.getString(4);
                 short activo = res.getShort(5);
-                cli = new Cliente(id, nombre, email, edad, activo, password);
+                cli = new Cliente(id, nombre, email, edad, activo, password);                
             }
             return cli;
-
         } catch (SQLException ex) {
             Logger.getLogger(MySQLClienteDAO.class.getName())
                     .log(Level.SEVERE, "Error SQL", ex);
             return null;
         }
-        
     }
 
     @Override
     public List<Cliente> obtenerTodos() {
-        
         try (Connection conex = DriverManager.getConnection(
                 Constantes.CONEXION, Constantes.USUARIO, Constantes.PASSWORD)) {
             String sqlQuery = "SELECT id, nombre, edad, email, password, activo  FROM cliente";
             PreparedStatement sentencia = conex.prepareStatement(sqlQuery);
             ArrayList<Cliente> clientes = new ArrayList<>();
-            ResultSet res =  sentencia.executeQuery();
-            while ( res.next()) {
+            ResultSet res = sentencia.executeQuery();
+            while (res.next()) {
                 int id = res.getInt("id");
                 String nombre = res.getString("nombre");
                 String email = res.getString("email");
@@ -158,7 +153,7 @@ public class MySQLClienteDAO implements InterfazDAO<Cliente> {
 
     @Override
     public Cliente modificar(Cliente cliente) {
-         try (Connection conex = DriverManager.getConnection(
+        try (Connection conex = DriverManager.getConnection(
                 Constantes.CONEXION, Constantes.USUARIO, Constantes.PASSWORD)) {
             String sqlQuery
                     = "UPDATE cliente SET nombre=?, email = ?,password=?, edad=?, activo=? WHERE id = ?;";

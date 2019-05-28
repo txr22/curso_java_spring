@@ -12,6 +12,6 @@ and open the template in the editor.
     </head>
     <body>
         <%@include file="cabecera.jsp" %>
-        <h1>Error al registrar</h1>
+        <div>Error al registrar</div>
     </body>
 </html>

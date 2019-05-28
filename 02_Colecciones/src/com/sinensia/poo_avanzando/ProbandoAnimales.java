@@ -19,20 +19,17 @@ public class ProbandoAnimales {
         TortugaNinja michelangelo 
                 = new TortugaNinja("Michelangelo", 175.5f);
         michelangelo.mover();
-        try{
-           
-           michelangelo.volar();
-           unTucan.volar();
-       }catch(UnsupportedOperationException ex){
-           
-           System.err.println("Este es el error "+ex.getMessage());
-           
-       }catch(StringIndexOutOfBoundsException e){
-            System.err.println("Error en el String "+e.getMessage());
-       }catch(Exception exc){
-            System.err.println("Error general"+ exc.getMessage());
-       } finally{
-            System.err.println("Siempre me ejecuto. Cerremos recursos");
+        try {
+            unTucan.volar();
+            michelangelo.volar();
+        } catch (UnsupportedOperationException error) {
+            System.err.println(error.getMessage());            
+        } catch (StringIndexOutOfBoundsException ex) {            
+            System.err.println(" Error en el String " + ex.getMessage());  
+        } catch (Exception ex) {            
+            System.err.println(" Error general " + ex.getMessage());  
+        } finally {
+            System.out.println("Siempre me ejecuto. Cerremos recursos");
         }
         
         Caballo rocinante = new Caballo("Rocinante", 3f);
@@ -54,14 +51,6 @@ public class ProbandoAnimales {
         
         System.out.println("¿Que mama el caballo?" 
                 + rocinante.mamar(tigre));
-        
-       // tigre.volar(); muestra un error
-       try{
-           tigre.volar();
-       }catch(Exception ex){
-           System.out.println(ex.getStackTrace());
-           
-       }
         
     }  
 }

@@ -1,17 +1,17 @@
 {
 	"info": {
-		"_postman_id": "b3be6a24-fbbc-48bd-bfca-9481b3369403",
+		"_postman_id": "1f7a8e13-a90c-4bc7-8993-960653059659",
 		"name": "Peticiones web clientes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "nuevo cliente teo",
+			"name": "Nuevo cliente",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8084/06_WebServlets/registro?nombre=Teodorin&edad=60&email=eeee@gmail.com&activo=on&password=acdc",
+					"raw": "http://localhost:8084/06_WebServlets/registro?nombre=FulanoDeTal&edad=10&email=fffff%40dd.d&activo=on",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -24,23 +24,19 @@
 					"query": [
 						{
 							"key": "nombre",
-							"value": "Teodorin"
+							"value": "FulanoDeTal"
 						},
 						{
 							"key": "edad",
-							"value": "60"
+							"value": "10"
 						},
 						{
 							"key": "email",
-							"value": "eeee@gmail.com"
+							"value": "fffff%40dd.d"
 						},
 						{
 							"key": "activo",
 							"value": "on"
-						},
-						{
-							"key": "password",
-							"value": "acdc"
 						}
 					]
 				}
@@ -48,12 +44,12 @@
 			"response": []
 		},
 		{
-			"name": "nuevo cliente  paco",
+			"name": "Nuevo cliente Copy",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8084/06_WebServlets/registro?nombre=paquito&edad=40&email=paco@paco.com&activo=on&password=3333333333",
+					"raw": "http://localhost:8084/06_WebServlets/registro?nombre=FulanoDeTal&edad=10&email=fffff%40dd.d&activo=on",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -66,23 +62,19 @@
 					"query": [
 						{
 							"key": "nombre",
-							"value": "paquito"
+							"value": "FulanoDeTal"
 						},
 						{
 							"key": "edad",
-							"value": "40"
+							"value": "10"
 						},
 						{
 							"key": "email",
-							"value": "paco@paco.com"
+							"value": "fffff%40dd.d"
 						},
 						{
 							"key": "activo",
 							"value": "on"
-						},
-						{
-							"key": "password",
-							"value": "3333333333"
 						}
 					]
 				}
@@ -90,12 +82,12 @@
 			"response": []
 		},
 		{
-			"name": "nuevo cliente  tobias",
+			"name": "Nuevo cliente Invalida",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8084/06_WebServlets/registro?nombre=tobias&edad=40&email=tobias@bias.com&activo=on&password=2222222222222222222222222222",
+					"raw": "http://localhost:8084/06_WebServlets/registro?nombre=FulanoDeTal&edad=10&email=fffff%40dd.d&activo=on",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -108,23 +100,57 @@
 					"query": [
 						{
 							"key": "nombre",
-							"value": "tobias"
+							"value": "FulanoDeTal"
 						},
 						{
 							"key": "edad",
-							"value": "40"
+							"value": "10"
 						},
 						{
 							"key": "email",
-							"value": "tobias@bias.com"
+							"value": "fffff%40dd.d"
 						},
 						{
 							"key": "activo",
 							"value": "on"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo cliente Invalida Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/06_WebServlets/registro?nombre=Fulano De Tal&edad=10&email=fffff@ttttt&activo=on",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"06_WebServlets",
+						"registro"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Fulano De Tal"
 						},
 						{
-							"key": "password",
-							"value": "2222222222222222222222222222"
+							"key": "edad",
+							"value": "10"
+						},
+						{
+							"key": "email",
+							"value": "fffff@ttttt"
+						},
+						{
+							"key": "activo",
+							"value": "on"
 						}
 					]
 				}

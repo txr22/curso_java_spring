@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.sinensia.pruebas;
 
 import com.sinensia.Cliente;
@@ -19,31 +14,23 @@ import java.util.TreeMap;
  * @author Admin
  */
 public class Colecciones {
-    public static void comparaciones(){
-        
+    
+    public static void comparaciones() {
         Cliente luis = new Cliente(2, "Luis", null); 
         Cliente bea = new Cliente(3, "Bea", null); 
-        
-        if (bea.compareTo(luis)<0){
-            System.out.println("BEA es menor que Luis");
-        } else if (bea.compareTo(luis) == 0){
-            
-            System.out.println("Son iguales");
-
-        } else if (bea.compareTo(luis) > 0){
-            
-         System.out.println("BEA es mayor que Luis");
-        }
+        if (bea.compareTo(luis) < 0)
+            System.out.println("BEA es menor LUIS");
+        else if (bea.compareTo(luis) == 0)
+            System.out.println("BEA es igual LUIS");
+        else if (bea.compareTo(luis) > 0)
+            System.out.println("BEA es mayor LUIS");   
     }
-    
     public static void ejemploHashMap() {
         HashMap<String, Cliente> diccClientes;
         diccClientes = new HashMap<String, Cliente>();
         Cliente ana = new Cliente(1, "Ana", null); 
         Cliente luis = new Cliente(2, "Luis", null); 
         Cliente bea = new Cliente(3, "Bea", null); 
-        
-        
         
         diccClientes.put("c3", bea);
         diccClientes.put("a1", ana);
@@ -61,28 +48,20 @@ public class Colecciones {
             System.out.println("Cliente " + parClaveValor.getKey());
             Cliente cliente = parClaveValor.getValue();
             System.out.println("  Nombre: " + cliente.getNombre());
-        }     
-        
- //************************************************************************
-        
- diccClientes.put("d4", new Cliente(7, "fulano", "ff@ff.com"));
-        Map<Date, Cliente> mapClientesFecha = new TreeMap<Date, Cliente>();
-        
-        mapClientesFecha.put(new Date(82, 4, 9), luis);
-        mapClientesFecha.put(new Date(81, 4, 9), new Cliente(7, "fulano", "hola@hola.com"));
-        mapClientesFecha.put(new Date(119, 4, 9), new Cliente(8, "mengano", "holita@hola.com"));
-        mapClientesFecha.put(new Date(80, 4, 9),diccClientes.get("c3"));
-        
-        System.out.println("\n\n ********** MAPA ORDENADO FECHA ***************\n");
-        for(Map.Entry<Date, Cliente> entrada : mapClientesFecha.entrySet()){
-            System.out.println("\n - Clave: " + entrada.getKey().toString());
-            System.out.println("  Valor: " + entrada.getValue().toString());
-            
-            
         }
+        diccClientes.put("d4", new Cliente(7, "Fulano", "ff@ff.com"));
+        Map<Date, Cliente> mapClientesFecha = new TreeMap<Date, Cliente>();
+        mapClientesFecha.put(new Date(82, 4, 9), luis);
+        mapClientesFecha.put(new Date(81, 4, 9), new Cliente(7, "Fulano", "ff@ff.com"));
+        mapClientesFecha.put(new Date(117, 9, 19), new Cliente(8, "Mengano", "mm@ff.com"));
+        mapClientesFecha.put(new Date(80, 7, 10), diccClientes.get("c3"));
         
-        
-  //************************************************************************
+        System.out.println("\n\n****** Mapa ordenado fecha *******");
+        for (Map.Entry<Date, Cliente> entrada : mapClientesFecha.entrySet())
+        {
+            System.out.println("\n - Clave: " + entrada.getKey().toString());
+            System.out.println("   Valor: " + entrada.getValue().toString());
+        }
     }
     public static void ejemploListas() {        
         ArrayList<Cliente> listaClientes;

@@ -1,33 +1,29 @@
 <%@page import="com.sinensia.modelo.logica.ServicioClientes"%>
 <!DOCTYPE html>
-
-
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <%@page import="com.sinensia.modelo.*" %>
-        
-        
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Registro Ok</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        	
-        
     </head>
     <body>
         <%@include file="cabecera.jsp" %>
+        <%= (new ServicioClientes()).obtenerUno("prueba@email.com").getNombre() %>
         
-        <%= (new ServicioClientes()).obtenerUno("prueba@email.com").getNombre()%>
-        <% for (int i =0; i<1;i++){
-            %>
-            
-            <div> registro ok</div>
+       <% for (int i = 0; i < 10; i++) 
+       {
+           %>
            
-            <% 
-                  }
-            %>
-           
-        <a href="listado.jsp">listados</a>
-       
-        <h1>Registrado correctamente!!!!</h1>
+        <div>Registro Ok</div>
+        
+           <%
+       } %>
+        
     </body>
 </html>

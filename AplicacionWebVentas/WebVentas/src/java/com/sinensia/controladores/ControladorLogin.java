@@ -62,6 +62,13 @@ public class ControladorLogin extends HttpServlet {
             request.getRequestDispatcher("error_registro.jsp")
                     .forward(request, response);
         }
+<<<<<<< HEAD
+=======
+        
+        
+        
+        
+>>>>>>> 7de5797aecf524a5a87eb82e92092ac37765a48a
     }
 
     /**

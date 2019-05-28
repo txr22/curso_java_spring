@@ -59,6 +59,8 @@ public class ClientesControladorREST extends HttpServlet {
                     jsonCli += ",   \"nombre\" : \"" + cli.getNombre() + "\"";
                     jsonCli += ",   \"email\" : \"" + cli.getEmail()+ "\"";
                     jsonCli += ",   \"password\" : \"" + cli.getPassword() + "\"";
+                    jsonCli += ",   \"edad\" : \"" + cli.getEdad()+ "\"";
+                    jsonCli += ",   \"activo\" : \"" + cli.getActivo()+ "\"";
                     jsonCli += "}";
                     salida.print(jsonCli);
                     

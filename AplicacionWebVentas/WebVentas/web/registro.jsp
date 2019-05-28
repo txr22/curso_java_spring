@@ -41,6 +41,8 @@ and open the template in the editor.
             <input type="reset" value="Limpiar"/>
             <input type="submit" value="Enviar"/>            
         </form>
+        
+        
         <script src="js/md5.min.js"></script>
         <script src="js/encriptacion.js"></script>
     </body>

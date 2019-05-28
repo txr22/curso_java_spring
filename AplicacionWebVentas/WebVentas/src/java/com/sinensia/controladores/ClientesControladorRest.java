@@ -7,12 +7,15 @@ package com.sinensia.controladores;
 
 import com.sinensia.modelo.Cliente;
 import com.sinensia.modelo.logica.ServicioClientes;
+import static java.awt.PageAttributes.MediaType.A;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import sun.reflect.generics.tree.Tree;
 
 /**
  *
@@ -36,6 +39,7 @@ public class ClientesControladorREST extends HttpServlet {
         
         try (PrintWriter salida = response.getWriter()) {  
             String nombre = request.getParameter("nombre");
+            
             String email = request.getParameter("email");
             String password = request.getParameter("password_encrip");
             String edad = request.getParameter("edad");
@@ -44,18 +48,27 @@ public class ClientesControladorREST extends HttpServlet {
             ServicioClientes servCli;
             servCli = new ServicioClientes();
             
-            Cliente cli = servCli.obtenerUno( email);
+            //OBTENEMOS EL CLIENTE POR EMAIL
+            Cliente cli = servCli.obtenerUno(email);
+            
+            String jsonCli ="{";
             if (cli != null) {
                 cli = servCli.modificar(cli.getId(), nombre, email, password, edad, activo);
                 if (cli != null) {
-                    System.out.print("{");
-                    System.out.print("   \"id\" : \"" + cli.getId() + "\"");
-                    System.out.print("   \"nombre\" : \"" + cli.getNombre() + "\"");
-                    System.out.print("}");
+                    jsonCli += "   \"id\" : \"" + cli.getId() + "\"";
+                    jsonCli += ",   \"nombre\" : \"" + cli.getNombre() + "\"";
+                    jsonCli += ",   \"email\" : \"" + cli.getEmail()+ "\"";
+                    jsonCli += ",   \"password\" : \"" + cli.getPassword() + "\"";
+                    jsonCli += "}";
+                    salida.print(jsonCli);
+                    
+                    
                 }
             }
-            System.out.println(">>>>> " + nombre);
-           // salida.println("{'nombre' : '"  + nombre +  "'}");
+            
+
+            
+     
         }
     }
 
@@ -84,3 +97,9 @@ public class ClientesControladorREST extends HttpServlet {
     }// </editor-fold>
 
 }
+
+
+
+ 
+
+

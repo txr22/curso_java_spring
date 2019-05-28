@@ -23,7 +23,18 @@ var alPulsarModificar = function () {
     peticionHTTP.onreadystatechange = function () {
         // alert("Ha cambiado de estado");
         if (this.readyState === 4 && this.status === 200) {
-            alert("Hemos recibido algo!" + this.responseText);            
+            alert("Hemos recibido algo!" + this.responseText);     
+            
+            //VAMOS A DESPARSEAR
+            var jsonResp = this.responseText;
+            var objResp = JSON.parse(jsonResp); //deserializar json en un objeto js
+            //alert("email recibido -> "+ objResp["email"]);
+            
+            document.getElementById("cartel").innerHTML = "Nombre: "+objResp["nombre"]  +"<br> email: "+ objResp["email"] 
+                    + "<br> Id: "+ objResp["id"]+ "<br> Edad: "+ cliente.edad + "<br> Password: "+ objResp["password"];
+            
+           
+          
         } /*else {
             alert("Aun NO hemos recibido nada!");
         }*/
@@ -43,6 +54,7 @@ var alPulsarModificar = function () {
           + "&edad=" + encodeURIComponent(document.getElementById("edad").value);
     
     alert(cadenaEnvio);
+         
     peticionHTTP.send(cadenaEnvio);
 };
 document.getElementById("btn_modificar").addEventListener("click", alPulsarModificar );

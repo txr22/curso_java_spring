@@ -39,6 +39,10 @@
             <input type="reset" value="Limpiar"/>
             <input id="btn_modificar" type="button" value="Modificar"/>            
         </form>
+       
+        
+         <br>
+         <span id="cartel" style="color: blue; font-family: fantasy; font-size: 25">Nombre modificado: </span>
         <script src="js/md5.min.js"></script>
         <script src="js/encriptacion.js"></script>
         <script src="js/editar.js"></script>

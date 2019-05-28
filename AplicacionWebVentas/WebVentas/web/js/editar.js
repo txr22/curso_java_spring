@@ -37,8 +37,8 @@ var alPulsarModificar = function () {
             var spanActivo = document.getElementById("span_activo");
             var spanPassword = document.getElementById("span_password");
             
-//            document.getElementById("cartel").innerHTML = "Nombre: "+objResp["nombre"]  +"<br> email: "+ objResp["email"] 
-//                    + "<br> Id: "+ objResp["id"]+ "<br> Edad: "+ cliente.edad + "<br> Password: "+ objResp["password"];
+         //   document.getElementById("cartel").innerHTML = "Nombre: "+objResp["nombre"]  +"<br> email: "+ objResp["email"] 
+          //          + "<br> Id: "+ objResp["id"]+ "<br> Edad: "+ cliente.edad + "<br> Password: "+ objResp["password"];
             spanId.innerHTML = "Id: " + objResp["id"];
             spanNombre.innerHTML = "Nombre: "+objResp.nombre;
             spanEmail.innerHTML = "Email: " +objResp.email;

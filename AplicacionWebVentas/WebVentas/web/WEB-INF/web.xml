@@ -9,8 +9,8 @@
         <servlet-class>com.sinensia.controladores.ControladorLogin</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ClientesControladorREST</servlet-name>
-        <servlet-class>com.sinensia.controladores.ClientesControladorREST</servlet-class>
+        <servlet-name>ClientesControladorRest</servlet-name>
+        <servlet-class>com.sinensia.controladores.ClientesControladorRest</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ControladorClientes</servlet-name>
@@ -21,7 +21,7 @@
         <url-pattern>/login.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ClientesControladorREST</servlet-name>
+        <servlet-name>ClientesControladorRest</servlet-name>
         <url-pattern>/clientes2.do</url-pattern>
     </servlet-mapping>
     <session-config>

@@ -21,7 +21,7 @@ import sun.reflect.generics.tree.Tree;
  *
  * @author Admin
  */
-public class ClientesControladorREST extends HttpServlet {
+public class ClientesControladorRest extends HttpServlet {
 
     /**
      * API Rest captura la peticion HTTP <code>PUT</code> method.

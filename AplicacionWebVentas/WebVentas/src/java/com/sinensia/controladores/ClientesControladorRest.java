@@ -5,6 +5,7 @@
  */
 package com.sinensia.controladores;
 
+import com.google.gson.Gson;
 import com.sinensia.modelo.Cliente;
 import com.sinensia.modelo.logica.ServicioClientes;
 import static java.awt.PageAttributes.MediaType.A;
@@ -51,7 +52,7 @@ public class ClientesControladorRest extends HttpServlet {
             //OBTENEMOS EL CLIENTE POR EMAIL
             Cliente cli = servCli.obtenerUno(email);
             
-            String jsonCli ="{";
+         /*   String jsonCli ="{";
             if (cli != null) {
                 cli = servCli.modificar(cli.getId(), nombre, email, password, edad, activo);
                 if (cli != null) {
@@ -63,14 +64,17 @@ public class ClientesControladorRest extends HttpServlet {
                     jsonCli += ",   \"activo\" : \"" + cli.getActivo()+ "\"";
                     jsonCli += "}";
                     salida.print(jsonCli);
-                    
-                    
                 }
-            }
-            
-
-            
-     
+            }*/
+         
+         cli = servCli.modificar(cli.getId(), nombre, email, password, edad, activo);
+         String gsonCli = new Gson().toJson(cli);
+         salida.print(gsonCli);
+         
+         
+         
+         
+         
         }
     }
 
@@ -97,6 +101,8 @@ public class ClientesControladorRest extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+ 
 
 }
 

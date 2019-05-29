@@ -1,5 +1,6 @@
 package com.sinensia.modelo;
 
+import com.sinensia.RegistroServlet;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -44,4 +45,13 @@ public class MySQLCliente {
             return false;
         }
     }
+
+    public String crear2(String nombre, String email, String edad, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
+
+   
+
 }

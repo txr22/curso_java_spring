@@ -20,7 +20,7 @@
                    required="required" size="50" maxlength="50"/>
             <br/>
             <label for="email">Email:</label> 
-            <input id="email" name="email" type="email" 
+            <input id="email" name="email" type="email" value="prueba@email.com"
                    required="required" size="50" maxlength="250"/>
             <br/>
             <label for="edad">Edad: </label> 

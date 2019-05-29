@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>Formulario registro Cliente</title>
@@ -12,7 +8,7 @@ and open the template in the editor.
     </head>
     <body>
         <h1>Formulario registro Cliente</h1>
-        <form name="form1" method="get" action="registro">
+        <form name="form1" method="POST" action="/registro">
             <table>
                 <tr><td>Nombre:</td><td>
                     <input type="text" name="nombre" id="nombre" size="30"
@@ -32,6 +28,19 @@ and open the template in the editor.
                     </td></tr>
             </table>
             <input type="submit" value="Registrarse"/>
+            <input type="button" id="btn_registro_ajax" value="Registrarse por AJAX"/>
         </form>
+        
+        <span id="cartel">Vamos a mostrar los datos</span><br>
+        
+        <span id="span_id"></span><br>
+        <span id="span_edad"></span><br>
+        <span id="span_activo"></span><br>
+        
+        <span id="span_nombre"></span><br>
+        <span id="span_email"></span><br>
+        
+        
+        <script src="js/registro_ajax.js"></script>
     </body>
 </html>

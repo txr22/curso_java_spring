@@ -1,6 +1,5 @@
 package com.sinensia;
 
-import com.google.gson.Gson;
 import com.sinensia.modelo.MySQLCliente;
 import java.io.BufferedReader;
 import java.io.IOException;
